@@ -21,7 +21,6 @@ class _FormScreenState extends State<FormScreen> {
       child: Scaffold(
         appBar: AppBar(
           title: const Text("Nova Tarefa"),
-          leading: Container(),
         ),
         body: Center(
           child: SingleChildScrollView(
@@ -111,6 +110,7 @@ class _FormScreenState extends State<FormScreen> {
                     onPressed: () {
                       if(_formKey.currentState!.validate()){
                         ScaffoldMessenger.of(context).showSnackBar(const SnackBar(content: Text("Dados Adicionados")));
+                        Navigator.pop(context);
                       }
                     },
                     child: const Text("Adicionar"),

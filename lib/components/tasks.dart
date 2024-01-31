@@ -69,7 +69,7 @@ class _TasksState extends State<Tasks> {
                         mainAxisAlignment: MainAxisAlignment.center,
                         crossAxisAlignment: CrossAxisAlignment.start,
                         children: [
-                          Container(
+                          SizedBox(
                             width: 200,
                             child: Text(
                               widget.nome,
@@ -84,20 +84,16 @@ class _TasksState extends State<Tasks> {
                       ),
                       Padding(
                         padding: const EdgeInsets.all(16.0),
-                        child: Container(
+                        child: SizedBox(
                           height: 52,
                           width: 52,
                           child: ElevatedButton(
                             onPressed: levelUp,
-                            child: Column(
-                              mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-                              crossAxisAlignment: CrossAxisAlignment.end,
-                              children: const [
+                            child: const Column(
+                              mainAxisAlignment: MainAxisAlignment.center,
+                              crossAxisAlignment: CrossAxisAlignment.center,
+                              children: [
                                 Icon(Icons.arrow_drop_up),
-                                Text(
-                                  'UP',
-                                  style: TextStyle(fontSize: 12),
-                                ),
                               ],
                             ),
                           ),
@@ -113,7 +109,7 @@ class _TasksState extends State<Tasks> {
                       padding: const EdgeInsets.only(
                         left: 8,
                       ),
-                      child: Container(
+                      child: SizedBox(
                         width: 200,
                         child: LinearProgressIndicator(
                           color: Colors.white,
@@ -127,7 +123,7 @@ class _TasksState extends State<Tasks> {
                       padding: const EdgeInsets.all(12.0),
                       child: Text(
                         'Nivel: $level',
-                        style: TextStyle(color: Colors.white, fontSize: 16),
+                        style: const TextStyle(color: Colors.white, fontSize: 16),
                       ),
                     ),
                   ],
