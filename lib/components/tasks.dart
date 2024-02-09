@@ -1,4 +1,3 @@
-
 import 'package:alura_flutter_curso_1/components/difficulty.dart';
 import 'package:flutter/material.dart';
 
@@ -57,12 +56,19 @@ class _TasksState extends State<Tasks> {
                         ),
                         child: ClipRRect(
                           borderRadius: BorderRadius.circular(4),
-                          child: Image.asset(
-                            widget.foto,
-                            height: 100,
-                            width: 72,
-                            fit: BoxFit.cover,
-                          ),
+                          child: widget.foto.contains("http")
+                              ? Image.network(
+                                  widget.foto,
+                                  height: 100,
+                                  width: 72,
+                                  fit: BoxFit.cover,
+                                )
+                              : Image.asset(
+                                  widget.foto,
+                                  height: 100,
+                                  width: 72,
+                                  fit: BoxFit.cover,
+                                ),
                         ),
                       ),
                       Column(
@@ -123,7 +129,8 @@ class _TasksState extends State<Tasks> {
                       padding: const EdgeInsets.all(12.0),
                       child: Text(
                         'Nivel: $level',
-                        style: const TextStyle(color: Colors.white, fontSize: 16),
+                        style:
+                            const TextStyle(color: Colors.white, fontSize: 16),
                       ),
                     ),
                   ],
