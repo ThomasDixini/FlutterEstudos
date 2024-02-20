@@ -27,5 +27,9 @@ class TaskDAO {
     return tasks;
   }
 
-  find() async {}
+  Future<List<Tasks>> find(String taskName) async {
+    final Database db = await getDatabase();
+    final List<Map<String, dynamic>> task = await db.query(_tableName, where: "$_name LIKE ?", whereArgs: [taskName]);
+    return toList(task);
+  }
 }
